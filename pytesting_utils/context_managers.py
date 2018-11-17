@@ -50,6 +50,15 @@ def tempdir() -> Generator[Union[bytes, str], Any, None]:
 
 @contextlib.contextmanager
 def virtualenv(env_name: str) -> Generator[VirtualEnvironment, Any, None]:
+    """
+    Creates a context for a virtual environment.
+
+    It creates a virtual environment in a temporary folder and yields an
+    object of the VirtualEnvironment class.
+
+    :param env_name: The name for the virtual environment
+    :return: A VirtualEnvironment object wrapping the virtual environment
+    """
     venv = VirtualEnvironment(env_name)
     yield venv
     venv.cleanup()
