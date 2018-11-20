@@ -48,6 +48,12 @@ class VirtualEnvironmentTest(unittest.TestCase):
         self.assertEqual(package[0], packages[0])
         self.assertEqual(package[1], packages[1])
 
+    def test_string_representation(self):
+        self.assertTrue(
+            "VirtualEnvironment VirtualEnvironmentTest in " "directory",
+            self._venv.__str__(),
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

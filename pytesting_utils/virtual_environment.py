@@ -89,3 +89,11 @@ class VirtualEnvironment(object):
         )
         out, err = process.communicate()
         return out.decode("utf-8"), err.decode("utf-8")
+
+    def __str__(self) -> str:
+        return "VirtualEnvironment {} in directory {}".format(
+            self._env_name, self._env_dir
+        )
+
+    def __repr__(self) -> str:
+        return self.__str__()
