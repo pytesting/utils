@@ -37,6 +37,6 @@ from .preconditions import (
 from .virtual_environment import VirtualEnvironment
 
 
-__version__ = "0.1.dev2"
+__version__ = "0.2.dev0"
 __name__ = "pytesting_utils"
 __author__ = "Stephan Lukasczyk"
