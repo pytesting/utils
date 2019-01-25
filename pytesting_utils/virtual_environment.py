@@ -19,11 +19,12 @@ class VirtualEnvironment(object):
     Better use the `virtualenv` context manager.
     """
 
-    def __init__(self, env_name: str) -> None:
+    def __init__(self, env_name: str, tmp_dir: str = None) -> None:
         """
         Creates a new virtual environment in a temporary folder.
 
         :param env_name: Name of the virtual environment
+        :param tmp_dir: Directory where the temporary folder should be created
         """
         Preconditions.check_argument(
             len(env_name) > 0,
@@ -32,7 +33,7 @@ class VirtualEnvironment(object):
         self._env_name = env_name
         self._packages = []
 
-        self._env_dir = tempfile.mkdtemp(suffix=env_name)
+        self._env_dir = tempfile.mkdtemp(suffix=env_name, dir=tmp_dir)
         virtualenv.create_environment(self._env_dir)
 
     def cleanup(self) -> None:
