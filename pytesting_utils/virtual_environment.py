@@ -19,7 +19,9 @@ class VirtualEnvironment(object):
     Better use the `virtualenv` context manager.
     """
 
-    def __init__(self, env_name: str, tmp_dir: str = None) -> None:
+    def __init__(
+        self, env_name: str, tmp_dir: Union[bytes, str, os.PathLike] = None
+    ) -> None:
         """
         Creates a new virtual environment in a temporary folder.
 
