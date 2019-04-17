@@ -16,22 +16,7 @@ GNU Lesser General Public License for more details.
 You should have received a copy of the GNU Lesser General Public License
 along with PyTesting utils.  If not, see <https://www.gnu.org/licenses/>.
 """
-__all__ = [
-    "cd",
-    "tempdir",
-    "virtualenv",
-    "Preconditions",
-    "IllegalArgumentException",
-    "IllegalStateException",
-    "NoneValueException",
-    "VirtualEnvironment",
-]
 
-from .context_managers import cd, tempdir, virtualenv
-from .preconditions import (
-    Preconditions,
-    IllegalArgumentException,
-    IllegalStateException,
-    NoneValueException,
-)
-from .virtual_environment import VirtualEnvironment
+VERSION = (0, 3, 0)
+
+__version__ = ".".join(map(str, VERSION))
