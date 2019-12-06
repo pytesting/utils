@@ -10,7 +10,7 @@ matrix:
 install:
   - pip install poetry
   - poetry install
-  - poetry install codecov
+  - poetry add codecov
 before_script:
   - if [[ $TRAVIS_PYTHON_VERSION != "3.8" ]]; then poetry run flake8 .; fi
 script:
