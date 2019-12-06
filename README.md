@@ -5,6 +5,7 @@
 [![License LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 [![PyPI version](https://badge.fury.io/py/pytesting-utils.svg)](https://badge.fury.io/py/pytesting-utils)
+[![Supported Python Versions](https://img.shields.io/pypi/pyversions/pytesting-utils.svg)](https://github.com/pytesting/utils)
 
 PyTesting Utils is a collection of utilities for the 
 [PyTesting](https://github.com/pytesting) project.
