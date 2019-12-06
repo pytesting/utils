@@ -10,18 +10,19 @@ matrix:
 install:
   - pip install poetry
   - poetry install
+  - poetry install codecov
 before_script:
-  - if [[ $TRAVIS_PYTHON_VERSION != "3.8-dev" ]]; then poetry run flake8 .; fi
+  - if [[ $TRAVIS_PYTHON_VERSION != "3.8" ]]; then poetry run flake8 .; fi
 script:
   - poetry run pylint pytesting_utils
   - poetry run mypy pytesting_utils
   - poetry run black --check .
   - poetry run py.test --cov=pytesting_utils tests/
 after_success:
-  - coverage combine
-  - coverage report
-  - coverage xml
-  - if [ ! -z "$CODECOV_TOKEN" ] && [ "$TRAVIS_PYTHON_VERSION" == "3.6" ] && [ "$TRAVIS_BRANCH" == "master" ]; then codecov; fi
+  - poetry run coverage combine
+  - poetry run coverage report
+  - poetry run coverage xml
+  - if [ ! -z "$CODECOV_TOKEN" ] && [ "$TRAVIS_PYTHON_VERSION" == "3.6" ] && [ "$TRAVIS_BRANCH" == "master" ]; then poetry run codecov; fi
 notifications:
   email:
     - python-test-runner@googlegroups.com
