@@ -1,16 +1,33 @@
-# -*- coding: utf-8 -*-
+"""
+PyTesting utils is a collection of utilities for the PyTesting project.
+
+This file is part of PyTesting utils.
+
+PyTesting utils is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+PyTesting utils is distributed in the hope that it will be useful
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with PyTesting utils.  If not, see <https://www.gnu.org/licenses/>.
+"""
 import os
 import shutil
 import subprocess
 import tempfile
-from typing import Union, List, Tuple
+from typing import Union, List, Tuple, Any
 
-import virtualenv
+import virtualenv  # type: ignore
 
 from pytesting_utils.preconditions import Preconditions
 
 
-class VirtualEnvironment(object):
+class VirtualEnvironment:
     """
     Wraps a virtual environment.
 
@@ -19,9 +36,7 @@ class VirtualEnvironment(object):
     Better use the `virtualenv` context manager.
     """
 
-    def __init__(
-        self, env_name: str, tmp_dir: Union[bytes, str, os.PathLike] = None
-    ) -> None:
+    def __init__(self, env_name: str, tmp_dir: Any = None) -> None:
         """
         Creates a new virtual environment in a temporary folder.
 
@@ -29,11 +44,10 @@ class VirtualEnvironment(object):
         :param tmp_dir: Directory where the temporary folder should be created
         """
         Preconditions.check_argument(
-            len(env_name) > 0,
-            "Cannot create an virtual environment without a name!",
+            len(env_name) > 0, "Cannot create an virtual environment without a name!",
         )
         self._env_name = env_name
-        self._packages = []
+        self._packages: List[str] = []
 
         self._env_dir = tempfile.mkdtemp(suffix=env_name, dir=tmp_dir)
         virtualenv.create_environment(self._env_dir)

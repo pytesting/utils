@@ -1,4 +1,21 @@
-# -*- coding: utf-8 -*-
+"""
+PyTesting utils is a collection of utilities for the PyTesting project.
+
+This file is part of PyTesting utils.
+
+PyTesting utils is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+PyTesting utils is distributed in the hope that it will be useful
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with PyTesting utils.  If not, see <https://www.gnu.org/licenses/>.
+"""
 import unittest
 
 from pytesting_utils.preconditions import (
@@ -64,8 +81,7 @@ class PreconditionsTest(unittest.TestCase):
             Preconditions.check_argument(True)
         except IllegalArgumentException:  # pragma: no cover
             self.fail(
-                "check_argument() raised IllegalArgumentException "
-                "unexpectedly!"
+                "check_argument() raised IllegalArgumentException " "unexpectedly!"
             )  # pragma: no cover
 
     def test_check_argument_true_msg(self):
@@ -73,8 +89,7 @@ class PreconditionsTest(unittest.TestCase):
             Preconditions.check_argument(True, "message")
         except IllegalArgumentException:  # pragma: no cover
             self.fail(
-                "check_argument() raised IllegalArgumentException "
-                "unexpectedly!"
+                "check_argument() raised IllegalArgumentException " "unexpectedly!"
             )  # pragma: no cover
 
     def test_check_argument_false_no_msg(self):

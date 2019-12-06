@@ -1,29 +1,37 @@
-# -*- coding: utf-8 -*-
+"""
+PyTesting utils is a collection of utilities for the PyTesting project.
+
+This file is part of PyTesting utils.
+
+PyTesting utils is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+PyTesting utils is distributed in the hope that it will be useful
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with PyTesting utils.  If not, see <https://www.gnu.org/licenses/>.
+"""
 from typing import Any
 
 
 class NoneValueException(RuntimeError):
     """An exception for None value errors"""
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(args, kwargs)
-
 
 class IllegalStateException(RuntimeError):
     """An exception for unexpected states"""
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(args, kwargs)
 
 
 class IllegalArgumentException(RuntimeError):
     """An exception for illegal arguments to methods"""
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(args, kwargs)
 
-
-class Preconditions(object):
+class Preconditions:
     """
     A precondition checking class.
 
