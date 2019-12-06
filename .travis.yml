@@ -2,11 +2,18 @@ sudo: required
 dist: xenial
 language: python
 cache: pip
-matrix:
+jobs:
   include:
-    - python: 3.6
-    - python: 3.7
-    - python: 3.8
+    - name: "Python 3.6 on Xenial Linux"
+      python: 3.6
+    - name: "Python 3.7 on Xenial Linux"
+      python: 3.7
+    - name: "Python 3.8 on Xenial Linux"
+      python: 3.8
+    - name: "Python 3.7.4 on macOS"
+      os: osx
+      osx_image: xcode11.2
+      language: shell
 install:
   - pip install poetry
   - poetry install
