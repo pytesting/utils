@@ -8,7 +8,7 @@ readme = "README.md"
 repository = "https://github.com/pytesting/utils"
 keywords = "test runner, unittest, nose, pytest"
 classifiers = [
-    "Development Status :: 2 - Planning",
+    "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
     "Intended Audience :: Education",
     "Intended Audience :: Science/Research",
