@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pytesting_utils"
-version = "0.4.1"
+version = "0.5.0"
 description = "Utilities for the PyTesting project"
 authors = ["Stephan Lukasczyk <python-test-runner@googlegroups.com>"]
 license = "LGPL-3.0+"
