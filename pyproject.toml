@@ -6,7 +6,7 @@ authors = ["Stephan Lukasczyk <python-test-runner@googlegroups.com>"]
 license = "LGPL-3.0+"
 readme = "README.md"
 repository = "https://github.com/pytesting/utils"
-keywords = "test runner, unittest, nose, pytest"
+keywords = ["test runner", "unittest", "nose", "pytest"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
